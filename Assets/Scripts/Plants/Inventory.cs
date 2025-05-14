@@ -11,7 +11,7 @@ public class PlayerInventory : MonoBehaviour
     private List<string> flowers = new List<string>();
 
     // Maximum inventory capacity
-    private const int MAX_CAPACITY = 5;
+    private const int MAX_CAPACITY = 30; // sorry dimitar but the player shouldnt be capped on a pick up counter
 
     // Public property to check current flower count
     public int FlowerCount => flowers.Count;

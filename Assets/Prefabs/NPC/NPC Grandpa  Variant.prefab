@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2466534157790587785
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2352308888071460651, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 444.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352308888071460651, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 29.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352308888071460651, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 546.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352308888071460651, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352308888071460651, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352308888071460651, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352308888071460651, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352308888071460651, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352308888071460651, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2352308888071460651, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822675321178867116, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_Name
+      value: NPC Grandpa  Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6822675321178867116, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      propertyPath: m_TagString
+      value: NPC
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6822675321178867116, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5296299991289299438}
+    - targetCorrespondingSourceObject: {fileID: 6822675321178867116, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2949030502254389457}
+    - targetCorrespondingSourceObject: {fileID: 6822675321178867116, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3928359091959466376}
+  m_SourcePrefab: {fileID: 100100000, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+--- !u!1 &8977328487170403877 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6822675321178867116, guid: c16351f2c45a6e143b42c11abe3ea2c9, type: 3}
+  m_PrefabInstance: {fileID: 2466534157790587785}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5296299991289299438
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977328487170403877}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 3, z: 4}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2949030502254389457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977328487170403877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2568a2eb02431a43abf5b92032e14a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 11400000, guid: 995b6df30540eb44f97d121aa5cf15c7, type: 2}
+  marker: {fileID: 0}
+--- !u!114 &3928359091959466376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977328487170403877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0164e9b0cb4013442b2c238cf822162f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - minDisturbance: 0
+    maxDisturbance: 10
+    line: 'Hey kid, enjoying yourself so far? '
+  - minDisturbance: 11
+    maxDisturbance: 20
+    line: Dont forget to keep your distance from the animals, thye dont like it when
+      you get too close.
+  speakCooldown: 10

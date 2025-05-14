@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd846627d981a534493d728576843a91, type: 3}
+  m_Name: Quest_FindThisPerson.
+  m_EditorClassIdentifier: 
+  questID: find_person_001
+  questTitle: Find The watcher
+  description: Locate the person watching over the bunnies
+  objectives:
+  - description: Find the forrest watcher
+    type: 3
+    targetID: PersonNPC
+    requiredAmount: 1
+  - description: Return and talk to grandpa
+    type: 0
+    targetID: QuestGiverNPC
+    requiredAmount: 1

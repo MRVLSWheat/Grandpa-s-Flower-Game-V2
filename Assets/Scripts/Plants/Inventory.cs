@@ -1,41 +1,50 @@
 using UnityEngine;
+using System.Collections.Generic;
 
-[System.Serializable]
-public class InventoryItem
-{
-    public string itemName;
-    public Sprite icon; // For future UI
-}
-
+/// <summary>
+/// Simple inventory system that stores harvested flowers
+/// Maximum capacity: 5 flowers
+/// </summary>
 public class PlayerInventory : MonoBehaviour
 {
-    [Header("Settings")]
-    [SerializeField] private int maxCapacity = 5;
-    private int currentFlowers = 0;
+    // List to store our collected flowers
+    private List<string> flowers = new List<string>();
 
-    // Called when trying to add a flower
-    public bool TryAddFlower()
+    // Maximum inventory capacity
+    private const int MAX_CAPACITY = 5;
+
+    // Public property to check current flower count
+    public int FlowerCount => flowers.Count;
+
+    // Public property to check if inventory is full
+    public bool IsFull => flowers.Count >= MAX_CAPACITY;
+
+    /// <summary>
+    /// Attempts to add a flower to inventory
+    /// </summary>
+    /// <returns>True if added successfully, false if inventory full</returns>
+    public bool AddFlower()
     {
-        if (currentFlowers >= maxCapacity)
+        if (IsFull)
         {
-            Debug.Log("Inventory full!");
+            Debug.Log("Inventory full! Can't collect more flowers.");
             return false;
         }
 
-        currentFlowers++;
-        Debug.Log($"Flower collected! ({currentFlowers}/{maxCapacity})");
+        flowers.Add("Flower");
+        Debug.Log($"Added flower to inventory. Now have {flowers.Count}/{MAX_CAPACITY}");
         return true;
     }
 
-    // Called when using/removing a flower
+    /// <summary>
+    /// Removes one flower from inventory
+    /// </summary>
     public void RemoveFlower()
     {
-        if (currentFlowers > 0)
+        if (flowers.Count > 0)
         {
-            currentFlowers--;
+            flowers.RemoveAt(flowers.Count - 1);
+            Debug.Log($"Removed flower. Now have {flowers.Count}/{MAX_CAPACITY}");
         }
     }
-
-    // Helper property
-    public bool IsFull => currentFlowers >= maxCapacity;
 }

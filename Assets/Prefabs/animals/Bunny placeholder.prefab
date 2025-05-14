@@ -150,7 +150,8 @@ MonoBehaviour:
   detectionRadius: 5
   safeDistance: 15
   normalSpeed: 3.5
-  fleeSpeed: 6
+  fleeSpeed: 10
+  disturbanceTickInterval: 1
 --- !u!114 &4992840720724754482
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -480,8 +480,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -764,15 +764,15 @@ PrefabInstance:
       objectReference: {fileID: 2853254249986564779, guid: 0f66d70267ac0694c8c85012619ed919, type: 3}
     - target: {fileID: 5145951705174748990, guid: c2a48e33809400d42bafd0c744142bf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 373
+      value: 384.5
       objectReference: {fileID: 0}
     - target: {fileID: 5145951705174748990, guid: c2a48e33809400d42bafd0c744142bf5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 13.12
+      value: 19.4
       objectReference: {fileID: 0}
     - target: {fileID: 5145951705174748990, guid: c2a48e33809400d42bafd0c744142bf5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 419.2
+      value: 504.4
       objectReference: {fileID: 0}
     - target: {fileID: 5145951705174748990, guid: c2a48e33809400d42bafd0c744142bf5, type: 3}
       propertyPath: m_LocalRotation.w

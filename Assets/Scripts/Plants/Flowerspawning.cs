@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.AI;
 
 namespace FlowerSpawner
 {
@@ -11,6 +12,10 @@ namespace FlowerSpawner
 
         // Controls how many flowers exist in the scene (1-25)
         [SerializeField][Range(1, 25)] private int spawnCount = 10;
+        [SerializeField] private float minimalXrange = 10f;
+        [SerializeField] private float maximalXrange = 10f;
+        [SerializeField] private float minimalYrange = 10f;
+        [SerializeField] private float maximalYrange = 10f;
 
         // Parent objects for organization (assign in Inspector)
         [SerializeField] private GameObject TallFlowers;
@@ -65,16 +70,24 @@ namespace FlowerSpawner
         // Generates a random spawn position within defined area
         private Vector3 GetRandomPosition()
         {
-            return new Vector3(
-                // Random X position within 10 units of spawner
-                Random.Range(transform.position.x - 10, transform.position.x + 10),
-
-                // Fixed Y position (9 units up)
-                9,
-
-                // Random Z position within 10 units of spawner
-                Random.Range(transform.position.z - 10, transform.position.z + 10)
+            // Generate a random XZ position within 10 units of the spawner
+            Vector3 randomXZ = new Vector3(
+                Random.Range(transform.position.x - minimalXrange, transform.position.x + maximalXrange),
+                transform.position.y, // Start at spawner's Y
+                Random.Range(transform.position.z - minimalYrange, transform.position.z + maximalYrange)
             );
+
+            NavMeshHit hit;
+            // Sample the NavMesh at the random XZ position, within a max distance (e.g., 20 units)
+            if (NavMesh.SamplePosition(randomXZ, out hit, 20f, NavMesh.AllAreas))
+            {
+                return hit.position;
+            }
+            else
+            {
+                // Fallback: return the original random position at fixed height if NavMesh not found
+                return new Vector3(randomXZ.x, 9, randomXZ.z);
+            }
         }
     }
 }

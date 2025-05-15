@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Flower
   - NPC
+  - Player2
   layers:
   - Default
   - TransparentFX

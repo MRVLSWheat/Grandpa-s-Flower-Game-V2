@@ -39,13 +39,14 @@ public class AnimalMovement : MonoBehaviour
     {
         agent       = GetComponent<NavMeshAgent>();
         agent.speed = normalSpeed;
-        player      = GameObject.FindGameObjectWithTag("Player").transform;
+        player      = GameObject.FindGameObjectWithTag("Player2").transform;
         wanderTimer = wanderInterval;
     }
 
     void Update()
     {
         float distToPlayer = Vector3.Distance(transform.position, player.position);
+        Debug.Log(distToPlayer); // Debugging line to check distance to player
 
         if (currentState == State.Wandering)
         {
@@ -55,8 +56,11 @@ public class AnimalMovement : MonoBehaviour
                 BeginFlee();
                 Debug.Log("fleeing");
             }
-            else
+            else if (distToPlayer > detectionRadius)
+                    {
                 Wander();
+            }
+                
         }
         else // Fleeing
         {

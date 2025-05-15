@@ -25,7 +25,7 @@ public class HostileAnimalSimple : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag("Player2");
         respawnPoint = GameObject.Find("RespawnPoint");
 
         if (player == null || respawnPoint == null)

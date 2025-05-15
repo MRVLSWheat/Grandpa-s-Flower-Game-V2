@@ -49,8 +49,12 @@ public class AnimalMovement : MonoBehaviour
 
         if (currentState == State.Wandering)
         {
+            Debug.Log("wandering"); 
             if (distToPlayer <= detectionRadius)
+            {
                 BeginFlee();
+                Debug.Log("fleeing");
+            }
             else
                 Wander();
         }

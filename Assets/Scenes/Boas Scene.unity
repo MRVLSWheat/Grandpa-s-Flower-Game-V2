@@ -14433,7 +14433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0164e9b0cb4013442b2c238cf822162f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - minDisturbance: 0
+    maxDisturbance: 1
+    line: Hey kid be mindful of the animals ok ?
   speakCooldown: 10
 --- !u!114 &746219035
 MonoBehaviour:
@@ -17221,29 +17224,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
   m_PrefabInstance: {fileID: 1159113572}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &882428073
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 882428066}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &882428074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22342,6 +22322,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 78.19998
       objectReference: {fileID: 0}
+    - target: {fileID: 4253012990419024489, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5126527961139664760, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.399994
@@ -22425,10 +22409,38 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 882428074}
-    - targetCorrespondingSourceObject: {fileID: 453084650579209855, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 4253012990419024489, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 882428073}
+      addedObject: {fileID: 1159113574}
   m_SourcePrefab: {fileID: 100100000, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+--- !u!1 &1159113573 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4253012990419024489, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
+  m_PrefabInstance: {fileID: 1159113572}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &1159113574
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159113573}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1160027275
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33724,7 +33736,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0164e9b0cb4013442b2c238cf822162f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - minDisturbance: 0
+    maxDisturbance: 1
+    line: Hey Kid, why don't you go talk to the friendly Forest Keeper over by that
+      tower
+  - minDisturbance: 2
+    maxDisturbance: 3
+    line: Stop fucking around you little shit !
   speakCooldown: 10
 --- !u!114 &1685612825
 MonoBehaviour:
@@ -33777,8 +33796,8 @@ NavMeshAgent:
   m_BaseOffset: -0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!65 &1685612828
-BoxCollider:
+--- !u!135 &1685612831
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -33796,30 +33815,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &1685612829
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1685612823}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
+  m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1686134962
 GameObject:
@@ -43075,12 +43071,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7409199482888661521, guid: 5800d4d3b50cf6f4d9218841105ded84, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1685612829}
-    - targetCorrespondingSourceObject: {fileID: 7409199482888661521, guid: 5800d4d3b50cf6f4d9218841105ded84, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1685612828}
-    - targetCorrespondingSourceObject: {fileID: 7409199482888661521, guid: 5800d4d3b50cf6f4d9218841105ded84, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1685612827}
     - targetCorrespondingSourceObject: {fileID: 7409199482888661521, guid: 5800d4d3b50cf6f4d9218841105ded84, type: 3}
       insertIndex: -1
@@ -43091,6 +43081,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7409199482888661521, guid: 5800d4d3b50cf6f4d9218841105ded84, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1685612824}
+    - targetCorrespondingSourceObject: {fileID: 7409199482888661521, guid: 5800d4d3b50cf6f4d9218841105ded84, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1685612831}
   m_SourcePrefab: {fileID: 100100000, guid: 5800d4d3b50cf6f4d9218841105ded84, type: 3}
 --- !u!1001 &8685080934559693077
 PrefabInstance:

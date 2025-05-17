@@ -60,7 +60,7 @@ public class QuestGiver : MonoBehaviour {
     }
 
     void Update() {
-        if (!playerInRange || !Input.GetKeyDown(KeyCode.E)) return;
+        if (!playerInRange || !Input.GetKeyDown(KeyCode.B)) return;
 
         // Already completed?
         if (QuestManager.Instance.completedQuests.Contains(quest.questID)) {

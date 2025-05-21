@@ -94,7 +94,7 @@ PrefabInstance:
       addedObject: {fileID: -6826320361357039342}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9e291ccd1c6bc1f4fa31f85d8eb1bcff, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5710089911797002166}
+      addedObject: {fileID: -8192252819407436157}
   m_SourcePrefab: {fileID: 100100000, guid: 9e291ccd1c6bc1f4fa31f85d8eb1bcff, type: 3}
 --- !u!1 &2699443632747337042 stripped
 GameObject:
@@ -208,7 +208,7 @@ MonoBehaviour:
   normalSpeed: 3.5
   giveUpDistance: 20
   attackRange: 2
---- !u!114 &5710089911797002166
+--- !u!114 &-8192252819407436157
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -220,8 +220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5b7533b6d5e4840bf69717c7a8ddcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: 5
-  spawnRadius: 3
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 0
+  playerTag: Player
+  respawnTag: Respawn
+  catchRadius: 2

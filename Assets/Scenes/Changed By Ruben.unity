@@ -11351,11 +11351,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5b7533b6d5e4840bf69717c7a8ddcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionRange: 5
-  spawnRadius: 3
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 1
+  playerTag: Player
+  respawnTag: Respawn
+  catchRadius: 1.5
 --- !u!1 &595221702
 GameObject:
   m_ObjectHideFlags: 0
@@ -14075,7 +14073,7 @@ MonoBehaviour:
   chaseCooldown: 5
   chaseSpeed: 3.5
   roamSpeed: 2
-  respawnPoint: {fileID: 0}
+  respawnPoint: {fileID: 1386107472}
   fadeImage: {fileID: 0}
   fadeDuration: 1
   pauseAtWanderPoint: 1
@@ -22827,7 +22825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6556307555316582679, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 456.5
+      value: 458.3
       objectReference: {fileID: 0}
     - target: {fileID: 6556307555316582679, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -27913,7 +27911,7 @@ Transform:
   m_GameObject: {fileID: 1386107471}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 430.486, y: 20.59, z: 418.3}
+  m_LocalPosition: {x: 428.7, y: 31.5, z: 555.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

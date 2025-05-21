@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Block-3-Grandpa-s-Farm.sln"
+    "dotnet.defaultSolution": "Grandpa-s-Flower-Game-V2.sln"
 }

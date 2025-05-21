@@ -46,7 +46,7 @@ public class AnimalMovement : MonoBehaviour
     void Update()
     {
         float distToPlayer = Vector3.Distance(transform.position, player.position);
-        Debug.Log(distToPlayer); // Debugging line to check distance to player
+        //Debug.Log(distToPlayer); // Debugging line to check distance to player
 
         if (currentState == State.Wandering)
         {

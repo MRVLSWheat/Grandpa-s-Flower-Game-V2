@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class DisturbanceManager : MonoBehaviour
@@ -9,6 +10,8 @@ public class DisturbanceManager : MonoBehaviour
     public float maxDisturbance = 100f;
     public float minDisturbance = 0f;
     public float decayRate = 0.1f;
+    public SimpleSkyboxFade skyboxFadeScript;  // Drag the Skybox object (with the script on it) into this in the Inspector
+    public RainToggle RainToggle; // Drag the RainToggle script here
 
     public Slider disturbanceSlider;
 
@@ -45,6 +48,7 @@ public class DisturbanceManager : MonoBehaviour
 
     void Update()
     {
+
         if (disturbanceValue > minDisturbance)
         {
             disturbanceValue -= decayRate * Time.deltaTime;
@@ -54,6 +58,19 @@ public class DisturbanceManager : MonoBehaviour
         if (disturbanceSlider != null)
         {
             disturbanceSlider.value = disturbanceValue;
+        }
+        /*  if (skyboxFadeScript != null)
+          {
+              skyboxFadeScript.SetVisibilityByValue(disturbanceValue);
+           }   */
+
+        if (RainToggle != null)
+        {
+            RainToggle.RainToggled(disturbanceValue);
+        }
+        if (Input.GetKeyDown("l"))
+        {
+            disturbanceValue += 10f;
         }
     }
 

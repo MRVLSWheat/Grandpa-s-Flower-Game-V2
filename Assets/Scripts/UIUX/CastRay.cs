@@ -37,20 +37,10 @@ public class castRay : MonoBehaviour
                 {
                     tooltipText.text = "Press E";
                     tooltipText.gameObject.SetActive(true);
-                }
+                } 
             }
+            else tooltipText.gameObject.SetActive(false);
         }
-
-        tooltipText.gameObject.SetActive(false);
-    }
-
-    private void OnGUI()
-    {
-        if (pressingE)
-        {
-            GUIStyle e = new GUIStyle();
-            e.fontSize = 20;
-            GUI.Label(new Rect(630, 20, 300, 100), "Text here :D", e);
-        }
+        
     }
 }

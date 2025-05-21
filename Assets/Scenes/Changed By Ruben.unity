@@ -17879,9 +17879,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4220bc36f19fcac42871acdff3b8376f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bookSize: {x: 800, y: 600}
+  pageSize: {x: 600, y: 800}
   backgroundPosition: {x: 0, y: 0}
-  leftPagePosition: {x: -200, y: 0}
-  rightPagePosition: {x: 200, y: 0}
+  leftPagePosition: {x: -300, y: 0}
+  rightPagePosition: {x: 300, y: 0}
   pageSpritesList:
   - leftPageSprite: {fileID: 21300000, guid: 0e354abfd4c196746b3ea353da4b04a4, type: 3}
     rightPageSprite: {fileID: 21300000, guid: 184217748bae6c64cbc493ec4135f66e, type: 3}

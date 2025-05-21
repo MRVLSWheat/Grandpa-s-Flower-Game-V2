@@ -9,6 +9,10 @@ public class BookMenu : MonoBehaviour
     private Image leftPage;     // Left page image
     private Image rightPage;    // Right page image
 
+    [Header("Book Size")]
+    public Vector2 bookSize = new Vector2(800, 600); // Default size for the background
+    public Vector2 pageSize = new Vector2(400, 600); // Default size f
+
     private int currentPage = 0;  // Track the current page
     private bool isBookOpen = false;  // Track if the book is open
 
@@ -132,7 +136,7 @@ public class BookMenu : MonoBehaviour
         pageObject.AddComponent<RectTransform>().anchoredPosition = position;
 
         Image pageImage = pageObject.AddComponent<Image>();
-        pageImage.rectTransform.sizeDelta = new Vector2(400, 600); // Set page size
+        pageImage.rectTransform.sizeDelta = pageSize; // Use the variable here
         return pageImage;
     }
 
@@ -144,7 +148,7 @@ public class BookMenu : MonoBehaviour
         backgroundObject.AddComponent<RectTransform>().anchoredPosition = position;
 
         Image backgroundImage = backgroundObject.AddComponent<Image>();
-        backgroundImage.rectTransform.sizeDelta = new Vector2(800, 600); // Set background size
+        backgroundImage.rectTransform.sizeDelta = bookSize; // Use the variable here
         return backgroundImage;
     }
 

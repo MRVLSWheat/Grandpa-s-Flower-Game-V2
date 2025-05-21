@@ -11351,9 +11351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a5b7533b6d5e4840bf69717c7a8ddcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTag: Player
-  respawnTag: Respawn
   catchRadius: 1.5
+  fadeDuration: 0.5
 --- !u!1 &595221702
 GameObject:
   m_ObjectHideFlags: 0
@@ -14014,7 +14013,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0164e9b0cb4013442b2c238cf822162f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - minDisturbance: 0
+    maxDisturbance: 10
+    line: aww and who are you little one?
+  - minDisturbance: 11
+    maxDisturbance: 20
+    line: Little shit dont make me chase you like you are chasing the bunnies
+  - minDisturbance: 21
+    maxDisturbance: 30
+    line: GET YOUR ASS BACK HERE BOY IMA MAKE YOU WISH YOU WHERE STILL PICKING COTTON
   speakCooldown: 10
 --- !u!114 &746219035
 MonoBehaviour:
@@ -37960,7 +37968,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0164e9b0cb4013442b2c238cf822162f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - minDisturbance: 0
+    maxDisturbance: 10
+    line: Hey kid, are you having fun wandering around?
+  - minDisturbance: 11
+    maxDisturbance: 20
+    line: Kid, Be more mindfull of the animals. You have been getting too close.
+  - minDisturbance: 21
+    maxDisturbance: 30
+    line: alright you little shit stop being a brat
   speakCooldown: 10
 --- !u!114 &1685612825
 MonoBehaviour:

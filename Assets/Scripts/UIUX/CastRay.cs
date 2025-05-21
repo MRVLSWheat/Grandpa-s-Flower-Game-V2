@@ -29,7 +29,7 @@ public class castRay : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            if (hit.transform.CompareTag("NPC") || hit.transform.CompareTag("Flower"))
+            if (/*hit.transform.CompareTag("NPC") ||*/ hit.transform.CompareTag("Flower"))
             {
                 float distanceToHit = Vector3.Distance(hit.transform.position, player.position);
 

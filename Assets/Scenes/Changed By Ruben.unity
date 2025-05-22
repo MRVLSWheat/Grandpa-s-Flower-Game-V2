@@ -16613,6 +16613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e03ce50e3cf4bb409dda124c8243903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flowerAmount: 0
 --- !u!4 &882428076 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 937451010987979973, guid: 035bf1ba97d19214580cfe6f5a29fdc3, type: 3}
@@ -23593,6 +23594,7 @@ MonoBehaviour:
   maximalXrange: 5
   minimalYrange: 5
   maximalYrange: 5
+  heightSpawn: 0
   TallFlowers: {fileID: 6030761685262199180, guid: 7d8f85d40f48e9d42ab638285f1d9c9c, type: 3}
   ShortFlowers: {fileID: 563745723023933555, guid: 62ced782e5686494a93c70ed7dbdc34d, type: 3}
   flowers: []
@@ -24694,6 +24696,7 @@ MonoBehaviour:
   maximalXrange: 10
   minimalYrange: 10
   maximalYrange: 10
+  heightSpawn: 0
   TallFlowers: {fileID: 6030761685262199180, guid: 7d8f85d40f48e9d42ab638285f1d9c9c, type: 3}
   ShortFlowers: {fileID: 563745723023933555, guid: 62ced782e5686494a93c70ed7dbdc34d, type: 3}
   flowers: []
@@ -46701,12 +46704,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b85f8f48b84bff4e9937b3add582121, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Flower: {fileID: 2065481289923224539, guid: ba0417c46dcf90e4e8335d683c8cc759, type: 3}
+  Flower: {fileID: 1496777190533971939, guid: a5f1fe08aa3d28349a8c6b7221a91a50, type: 3}
   spawnCount: 10
   minimalXrange: 10
   maximalXrange: 10
   minimalYrange: 10
   maximalYrange: 10
+  heightSpawn: 0
   TallFlowers: {fileID: 6030761685262199180, guid: 7d8f85d40f48e9d42ab638285f1d9c9c, type: 3}
   ShortFlowers: {fileID: 563745723023933555, guid: 62ced782e5686494a93c70ed7dbdc34d, type: 3}
   flowers: []

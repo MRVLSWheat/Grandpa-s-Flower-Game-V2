@@ -16,6 +16,7 @@ namespace FlowerSpawner
         [SerializeField] private float maximalXrange = 10f;
         [SerializeField] private float minimalYrange = 10f;
         [SerializeField] private float maximalYrange = 10f;
+        [SerializeField] private float heightSpawn = 0f;
 
         // Parent objects for organization (assign in Inspector)
         [SerializeField] private GameObject TallFlowers;

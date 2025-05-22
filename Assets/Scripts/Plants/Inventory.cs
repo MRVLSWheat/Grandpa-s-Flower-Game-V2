@@ -10,6 +10,8 @@ public class PlayerInventory : MonoBehaviour
     // List to store our collected flowers
     private List<string> flowers = new List<string>();
 
+    public int flowerAmount; // Property to track flower amount
+
     // Maximum inventory capacity
     private const int MAX_CAPACITY = 30; // sorry dimitar but the player shouldnt be capped on a pick up counter
 
@@ -46,5 +48,10 @@ public class PlayerInventory : MonoBehaviour
             flowers.RemoveAt(flowers.Count - 1);
             Debug.Log($"Removed flower. Now have {flowers.Count}/{MAX_CAPACITY}");
         }
+    }
+
+    public void FlowerAmount()
+    {
+        flowerAmount = flowers.Count;
     }
 }

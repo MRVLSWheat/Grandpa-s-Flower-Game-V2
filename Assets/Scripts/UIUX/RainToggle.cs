@@ -16,7 +16,7 @@ public class RainToggle : MonoBehaviour
     {
         if (Rain != null)
         {
-            if (value >= 90f && value <= 100f)
+            if (value >= 60f && value <= 100f)
             {
                 Rain.SetActive(true);
             }

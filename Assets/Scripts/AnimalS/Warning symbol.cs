@@ -109,7 +109,6 @@ public class AnimalWarning : MonoBehaviour
             currentSymbol = null;
         }
     }
-
     private AudioClip CreateBeepAudioClip()
     {
         int sampleRate = 44100;

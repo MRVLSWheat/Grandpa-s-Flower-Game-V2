@@ -205,16 +205,16 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
+  m_audioClip: {fileID: 8300000, guid: a5ed8b9899bf6ff489f6a2ec8a539037, type: 3}
+  m_Resource: {fileID: 8300000, guid: a5ed8b9899bf6ff489f6a2ec8a539037, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.893
+  m_Pitch: 1.67
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 135
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -307,4 +307,4 @@ MonoBehaviour:
   warningRange: 10
   warningSymbolPrefab: {fileID: 0}
   symbolDuration: 2
-  warningSound: {fileID: 0}
+  warningSound: {fileID: 8300000, guid: a5ed8b9899bf6ff489f6a2ec8a539037, type: 3}

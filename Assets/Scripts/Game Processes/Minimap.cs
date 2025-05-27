@@ -5,43 +5,50 @@ using UnityEngine.UI;
 public class AutoMinimap : MonoBehaviour
 {
     [Header("Minimap Settings")]
-    [Tooltip("Height of the minimap camera above the player.")]
     public float mapHeight = 50f;
-    [Tooltip("Orthographic size of the minimap camera.")]
     public float mapSize = 50f;
-    [Tooltip("Resolution (width and height) of the minimap RenderTexture.")]
     public int textureSize = 256;
-    [Tooltip("Layer mask for objects to include in the minimap.")]
     public LayerMask minimapMask = ~0;
-
+    
     [Header("UI Settings")]
-    [Tooltip("Size of the minimap UI RawImage in pixels.")]
     public Vector2 minimapUISize = new Vector2(200, 200);
-    [Tooltip("Screen-space position (bottom-left) of the minimap in pixels.")]
     public Vector2 minimapUIPosition = new Vector2(10, 10);
-    [Tooltip("Sprite used for the player blip. If unset, uses default UI sprite.")]
     public Sprite playerIconSprite;
+    
+    [Header("Toggle Settings")]
+    [Tooltip("Key to toggle the minimap on/off.")]
+    public KeyCode toggleKey = KeyCode.M;
 
     private Camera mapCam;
     private RawImage mapImage;
     private RectTransform mapRect;
     private RectTransform iconRect;
     private Canvas canvas;
+    private bool minimapEnabled = true;
 
     void Awake()
     {
         SetupMinimap();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(toggleKey))
+        {
+            ToggleMinimap();
+        }
+    }
+
     void LateUpdate()
     {
+        if (!minimapEnabled) return;
         FollowPlayer();
         RotateIcon();
     }
 
     void SetupMinimap()
     {
-        // 1. Create and configure the minimap camera
+        // Create minimap camera
         GameObject camGO = new GameObject("MinimapCamera");
         camGO.transform.SetParent(transform);
         camGO.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
@@ -53,12 +60,12 @@ public class AutoMinimap : MonoBehaviour
         mapCam.clearFlags = CameraClearFlags.SolidColor;
         mapCam.backgroundColor = Color.clear;
 
-        // 2. Create the RenderTexture
+        // Create render texture
         RenderTexture rt = new RenderTexture(textureSize, textureSize, 16);
         rt.name = "MinimapRT";
         mapCam.targetTexture = rt;
 
-        // 3. Find or create a Canvas
+        // Find or create canvas
         canvas = FindObjectOfType<Canvas>();
         if (canvas == null)
         {
@@ -69,7 +76,7 @@ public class AutoMinimap : MonoBehaviour
             cGO.AddComponent<GraphicRaycaster>();
         }
 
-        // 4. Create the RawImage for the minimap
+        // Create minimap UI
         GameObject rawGO = new GameObject("MinimapImage");
         rawGO.transform.SetParent(canvas.transform);
         mapImage = rawGO.AddComponent<RawImage>();
@@ -80,7 +87,7 @@ public class AutoMinimap : MonoBehaviour
         mapRect.anchoredPosition = minimapUIPosition;
         mapRect.sizeDelta = minimapUISize;
 
-        // 5. Create the player blip icon
+        // Create player blip icon
         GameObject iconGO = new GameObject("MinimapIcon");
         iconGO.transform.SetParent(rawGO.transform);
         Image icon = iconGO.AddComponent<Image>();
@@ -94,21 +101,24 @@ public class AutoMinimap : MonoBehaviour
         iconRect.sizeDelta = new Vector2(16, 16);
     }
 
+    void ToggleMinimap()
+    {
+        minimapEnabled = !minimapEnabled;
+        // Toggle camera and UI
+        if (mapCam != null) mapCam.enabled = minimapEnabled;
+        if (mapImage != null) mapImage.gameObject.SetActive(minimapEnabled);
+        if (iconRect != null) iconRect.gameObject.SetActive(minimapEnabled);
+    }
+
     void FollowPlayer()
     {
-        if (mapCam != null)
-        {
-            Vector3 pos = transform.position;
-            mapCam.transform.position = new Vector3(pos.x, pos.y + mapHeight, pos.z);
-        }
+        Vector3 pos = transform.position;
+        mapCam.transform.position = new Vector3(pos.x, pos.y + mapHeight, pos.z);
     }
 
     void RotateIcon()
     {
-        if (iconRect != null)
-        {
-            float angle = transform.eulerAngles.y;
-            iconRect.localEulerAngles = new Vector3(0, 0, -angle);
-        }
+        float angle = transform.eulerAngles.y;
+        iconRect.localEulerAngles = new Vector3(0, 0, -angle);
     }
 }

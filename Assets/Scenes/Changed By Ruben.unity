@@ -17186,7 +17186,8 @@ MonoBehaviour:
     m_Bits: 4294967295
   minimapUISize: {x: 350, y: 350}
   minimapUIPosition: {x: 1550, y: 10}
-  playerIconSprite: {fileID: 0}
+  playerIconSprite: {fileID: 21300000, guid: b74c31d447d2f5d41a61081bdf5e7126, type: 3}
+  toggleKey: 109
 --- !u!1 &887749081
 GameObject:
   m_ObjectHideFlags: 0

@@ -13433,6 +13433,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1181106106}
+  - {fileID: 759847168}
   - {fileID: 1243348407}
   - {fileID: 2084507169}
   m_Father: {fileID: 0}
@@ -15227,10 +15228,10 @@ MonoBehaviour:
     line: aww and who are you little one?
   - minDisturbance: 11
     maxDisturbance: 20
-    line: Little shit dont make me chase you like you are chasing the bunnies
+    line: Little kid stop chasing bunnies please
   - minDisturbance: 21
     maxDisturbance: 30
-    line: GET YOUR ASS BACK HERE BOY IMA MAKE YOU WISH YOU WHERE STILL PICKING COTTON
+    line: 'No more games Otis, stop annoying the animals ! '
   speakCooldown: 10
 --- !u!114 &746219035
 MonoBehaviour:
@@ -15509,6 +15510,138 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4939992092572231639, guid: 8ea3bba902fd7ce4e980f34a488034f5, type: 3}
   m_PrefabInstance: {fileID: 755532422}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &759847167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 759847168}
+  - component: {fileID: 759847172}
+  - component: {fileID: 759847171}
+  - component: {fileID: 759847170}
+  - component: {fileID: 759847169}
+  m_Layer: 0
+  m_Name: FlowerSpawner (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &759847168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759847167}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 880, y: -20.60541, z: -261}
+  m_LocalScale: {x: 4.7303524, y: 4.7303524, z: 4.7303524}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 651564825}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &759847169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759847167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b85f8f48b84bff4e9937b3add582121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Flower: {fileID: 1615635133062538475, guid: c0c2c3dadfc7bd540aecfe6f77338a65, type: 3}
+  spawnCount: 10
+  minimalXrange: 5
+  maximalXrange: 5
+  minimalYrange: 5
+  maximalYrange: 5
+  heightSpawn: 0
+  TallFlowers: {fileID: 6030761685262199180, guid: 7d8f85d40f48e9d42ab638285f1d9c9c, type: 3}
+  ShortFlowers: {fileID: 563745723023933555, guid: 62ced782e5686494a93c70ed7dbdc34d, type: 3}
+  flowers: []
+  flowerCount: 0
+--- !u!135 &759847170
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759847167}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &759847171
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759847167}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &759847172
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759847167}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &769572099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18818,7 +18951,7 @@ MonoBehaviour:
   - leftPageSprite: {fileID: 21300000, guid: 0e354abfd4c196746b3ea353da4b04a4, type: 3}
     rightPageSprite: {fileID: 21300000, guid: 184217748bae6c64cbc493ec4135f66e, type: 3}
   - leftPageSprite: {fileID: 21300000, guid: 0e354abfd4c196746b3ea353da4b04a4, type: 3}
-    rightPageSprite: {fileID: 21300000, guid: 8f14ef8e83eb97c40846daec4e4ed83b, type: 3}
+    rightPageSprite: {fileID: 21300000, guid: 0d950e1996783a445a7f991537dcd3fb, type: 3}
   customBackgroundSprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!114 &949561339
 MonoBehaviour:
@@ -26265,10 +26398,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Flower: {fileID: 3150276167185382731, guid: e90a5b17b1bcf824aa8131718b207d28, type: 3}
   spawnCount: 10
-  minimalXrange: 10
-  maximalXrange: 10
-  minimalYrange: 10
-  maximalYrange: 10
+  minimalXrange: 20
+  maximalXrange: 20
+  minimalYrange: 20
+  maximalYrange: 20
   heightSpawn: 0
   TallFlowers: {fileID: 6030761685262199180, guid: 7d8f85d40f48e9d42ab638285f1d9c9c, type: 3}
   ShortFlowers: {fileID: 563745723023933555, guid: 62ced782e5686494a93c70ed7dbdc34d, type: 3}
@@ -26357,7 +26490,7 @@ Transform:
   m_GameObject: {fileID: 1243348402}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -132.83762, y: -44.399086, z: -299.7435}
+  m_LocalPosition: {x: -966, y: -44.399086, z: -207}
   m_LocalScale: {x: 4.7303524, y: 4.7303524, z: 4.7303524}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41267,7 +41400,7 @@ MonoBehaviour:
     line: Kid, Be more mindfull of the animals. You have been getting too close.
   - minDisturbance: 21
     maxDisturbance: 30
-    line: alright you little shit stop being a brat
+    line: Stop annoying the animals Otis ! You're beeing annoying !
   speakCooldown: 10
 --- !u!114 &1685612825
 MonoBehaviour:

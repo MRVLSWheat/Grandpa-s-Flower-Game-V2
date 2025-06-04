@@ -18244,6 +18244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   harvestRange: 2
+  flowerspawning: {fileID: 2084507165}
 --- !u!114 &882428075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21586,8 +21587,8 @@ Transform:
   m_GameObject: {fileID: 1006299415}
   serializedVersion: 2
   m_LocalRotation: {x: -0.506375, y: -0.50637496, z: 0.4935427, w: 0.49354276}
-  m_LocalPosition: {x: -0.05, y: 1.15, z: 8.53}
-  m_LocalScale: {x: 0.19267, y: 0.19267, z: 0.19267}
+  m_LocalPosition: {x: 0.04, y: 0.38, z: 4.96}
+  m_LocalScale: {x: 0.13362435, y: 0.13362435, z: 0.13362435}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1163917060}
@@ -50230,7 +50231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1993773362
 Transform:
   m_ObjectHideFlags: 0
@@ -52825,7 +52826,7 @@ MonoBehaviour:
   minimalYrange: 10
   maximalYrange: 10
   heightSpawn: 2.19
-  Hidetheplane: {fileID: 0}
+  Hidetheplane: {fileID: 1006299417}
   TallFlowers: {fileID: 6030761685262199180, guid: 7d8f85d40f48e9d42ab638285f1d9c9c, type: 3}
   ShortFlowers: {fileID: 563745723023933555, guid: 62ced782e5686494a93c70ed7dbdc34d, type: 3}
   flowers: []

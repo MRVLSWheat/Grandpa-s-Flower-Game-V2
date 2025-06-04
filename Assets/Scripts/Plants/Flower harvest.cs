@@ -1,3 +1,4 @@
+using FlowerSpawner;
 using UnityEngine;
 
 
@@ -9,6 +10,8 @@ public class FlowerHarvester : MonoBehaviour
     [Header("Settings")]
     [Tooltip("How close player needs to be to harvest")]
     [SerializeField] private float harvestRange = 2f;
+
+    public Flowerspawning flowerspawning;
 
     // Reference to player's inventory
     private PlayerInventory inventory;
@@ -56,7 +59,9 @@ public class FlowerHarvester : MonoBehaviour
                 if (inventory.AddFlower())
                 {
                     // Only destroy if successfully added to inventory
+                    flowerspawning.RemoveFlower(collider.gameObject);
                     Destroy(collider.gameObject);
+                    
                 }
                 return; // Exit after first successful harvest
             }

@@ -18266,12 +18266,12 @@ MonoBehaviour:
   requiredFlowers: 10
   playerInventory: {fileID: 882428075}
   questGiverNpc: {fileID: 746219032}
-  startMessage: Quest Started! Go collect flowers.
-  completionMessage: Thank you! Quest Complete.
-  progressTextAnchoredPosition: {x: 10, y: -10}
-  startTextAnchoredPosition: {x: 10, y: -40}
-  completionTextAnchoredPosition: {x: 10, y: -70}
-  fontSize: 24
+  startMessage: Collect and hand over flowers
+  completionMessage: Thank you! I have another task for you
+  progressTextAnchoredPosition: {x: 1350, y: -500}
+  startTextAnchoredPosition: {x: 1350, y: -550}
+  completionTextAnchoredPosition: {x: 1000, y: -500}
+  fontSize: 40
   fontColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &891733112
 GameObject:

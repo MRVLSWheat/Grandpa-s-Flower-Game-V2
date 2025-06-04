@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;    // for Canvas, Text, etc.
+using UnityEngine.UI;
 
 /// <summary>
 /// A “collect flowers” quest that:
@@ -9,12 +9,14 @@ using UnityEngine.UI;    // for Canvas, Text, etc.
 ///    • Start Text: shows a custom “quest start” message you set in the Inspector.
 ///    • Completion Text: shows a custom “quest complete” message you set in the Inspector.
 ///    All three can be independently positioned via Inspector‐exposed Vector2 fields.
-/// 3. Requires the player to return to the NPC and hand in the flowers (press E again) to complete.
+/// 3. Requires the player to return to the same NPC and hand in the flowers (press E again) to complete.
+/// 4. Once completed, pressing E on the NPC will reset the quest and immediately start it again (repeatable).
+/// 5. Tracks internally how many flowers the NPC has “received” for logging/expansion.
 /// 
 /// Usage:
-/// • Make sure this GameObject also has your PlayerInventory component.
+/// • Attach this to any GameObject (e.g. an empty “QuestManager”).
 /// • In the Inspector:
-///     • Drag your PlayerInventory into “Player Inventory”.
+///     • Drag your PlayerInventory component (must be on your player or assigned manually) into “Player Inventory”.
 ///     • Drag your NPC GameObject (with an isTrigger Collider) into “Quest Giver NPC”.
 ///     • Set “Required Flowers” to how many flowers must be collected (e.g. 10).
 ///     • Fill in “Start Message” and “Completion Message” with the strings you want displayed.
@@ -25,6 +27,7 @@ using UnityEngine.UI;    // for Canvas, Text, etc.
 ///     • Optionally adjust “Font Size” and “Font Color” for all three texts.
 /// • Hit Play. Walk into the NPC’s trigger and press E → “Start Text” appears and Progress text appears.
 ///   As you collect flowers, the Progress text updates. Once you have enough, return and press E again → “Completion Text” appears.
+/// • Press E again on the NPC → the quest resets and starts over, and the NPC’s “received” count increments.
 /// </summary>
 public class FlowerCollectionQuest : MonoBehaviour
 {
@@ -68,10 +71,13 @@ public class FlowerCollectionQuest : MonoBehaviour
     private bool canInteractWithNpc = false;
 
     // References to the auto-created UI
-    private Canvas    questCanvas;
-    private Text      progressText;
-    private Text      startText;
-    private Text      completionText;
+    private Canvas questCanvas;
+    private Text progressText;
+    private Text startText;
+    private Text completionText;
+
+    // Tracks how many flowers the NPC has “received” over all runs
+    private int totalReceivedByNpc = 0;
 
     private void Reset()
     {
@@ -81,7 +87,7 @@ public class FlowerCollectionQuest : MonoBehaviour
 
     private void Start()
     {
-        // 1) Validate required references:
+        // 1) Validate required references
         if (playerInventory == null)
         {
             Debug.LogError($"[{nameof(FlowerCollectionQuest)}] No PlayerInventory assigned! Please set it in the Inspector.");
@@ -96,7 +102,7 @@ public class FlowerCollectionQuest : MonoBehaviour
             return;
         }
 
-        // 2) Create our Canvas + Text elements at runtime:
+        // 2) Create our Canvas + Text elements at runtime
         CreateProgressUI();
 
         Debug.Log($"[Quest] Approach the NPC and press E to start a {requiredFlowers}-flower quest.");
@@ -116,13 +122,20 @@ public class FlowerCollectionQuest : MonoBehaviour
         {
             if (!questActive)
             {
+                // 1st time pressing E → start the quest
                 StartQuest();
             }
             else if (!questCompleted)
             {
+                // Already started but not yet turned in → attempt turn-in
                 TryTurnInQuest();
             }
-            // else: quest has already been completed → do nothing (or show a “thanks” prompt if desired)
+            else
+            {
+                // questCompleted == true → “reset” and start again (repeatable)
+                ResetQuest();
+                StartQuest();
+            }
         }
     }
 
@@ -154,7 +167,7 @@ public class FlowerCollectionQuest : MonoBehaviour
         questActive = true;
         Debug.Log($"[Quest] Quest started! Collect {requiredFlowers} flowers and return to the NPC.");
 
-        // Show the start text (with the inspector‐configured content)
+        // Show the start text (with the inspector-configured content)
         startText.text = startMessage;
         startText.gameObject.SetActive(true);
 
@@ -165,21 +178,32 @@ public class FlowerCollectionQuest : MonoBehaviour
 
     /// <summary>
     /// Called when the player presses E on the NPC again (while quest is active but not yet completed).
-    /// If they have enough flowers, remove them, hide UI, mark complete, and invoke OnQuestCompleted().
-    /// Otherwise, log how many more are needed.
+    /// If they have enough flowers, removes them, logs “giving” them to the NPC,
+    /// hides UI, marks complete, and invokes OnQuestCompleted().
+    /// Otherwise, logs how many more are needed.
     /// </summary>
     private void TryTurnInQuest()
     {
         int currentCount = playerInventory.FlowerCount;
+
+        // — Debug log for off-by-one hunting —
+        Debug.Log($"[Quest] Trying to turn in. PlayerInventory reports FlowerCount = {currentCount} (needs {requiredFlowers}).");
+
         if (currentCount >= requiredFlowers)
         {
-            // Remove exactly requiredFlowers from inventory
+            // 1) Remove exactly requiredFlowers from playerInventory
             for (int i = 0; i < requiredFlowers; i++)
             {
                 playerInventory.RemoveFlower();
             }
 
-            // Update any internal flowerAmount field (if you rely on that)
+            // 2) “Give” the flowers to the NPC by incrementing our internal counter
+            totalReceivedByNpc += requiredFlowers;
+            Debug.Log($"[Quest] NPC '{questGiverNpc.name}' now has received {totalReceivedByNpc} total flower{(totalReceivedByNpc == 1 ? "" : "s")}.");
+
+            // 3) In case your PlayerInventory has a method to refresh internal state (optional)
+            //    e.g. if FlowerAmount() recalculates something, call it here.
+            //    (You can remove this if you don’t need it.)
             playerInventory.FlowerAmount();
 
             questCompleted = true;
@@ -210,8 +234,8 @@ public class FlowerCollectionQuest : MonoBehaviour
     }
 
     /// <summary>
-    /// If you want to test or reuse the quest at runtime, call this to reset its state.
-    /// Note: it does NOT refund flowers—if the player still has them, they could immediately turn in again.
+    /// Resets quest state so it can be repeated.
+    /// Does NOT refund flowers—if the player still has them, they could immediately turn in again.
     /// </summary>
     public void ResetQuest()
     {
@@ -277,8 +301,7 @@ public class FlowerCollectionQuest : MonoBehaviour
     }
 
     /// <summary>
-    /// Helper method: 
-    /// Creates a Text under the given parent, anchored top-left, with the specified anchoredPosition & size.
+    /// Helper: Creates a UI Text under the given parent, anchored top-left, with specified position & size.
     /// Uses LegacyRuntime.ttf as the built-in font.
     /// </summary>
     private Text CreateUIText(Transform parent, string name, Vector2 anchoredPos, string initialText, Vector2 sizeDelta)

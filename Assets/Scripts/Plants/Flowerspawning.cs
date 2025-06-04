@@ -17,6 +17,9 @@ namespace FlowerSpawner
         [SerializeField] private float minimalYrange = 10f;
         [SerializeField] private float maximalYrange = 10f;
         [SerializeField] private float heightSpawn = 0f;
+        private int timer = 0;
+        private bool resetTimer = false;
+        [SerializeField] private Hidetheplane Hidetheplane;
 
         // Parent objects for organization (assign in Inspector)
         [SerializeField] private GameObject TallFlowers;
@@ -50,6 +53,43 @@ namespace FlowerSpawner
                     SpawningFlowers();
                 }
             }
+
+            if (flowerCount < 8)
+            {
+                Debug.Log("Flower count is low: " + flowerCount + ". Spawning more flowers.");
+                StartCoroutine(Hidetheplane.ActivatePlantAlert());
+            }
+
+            if (Input.GetKeyDown("n"))
+            {
+                // Debugging: Log current flower count
+                Debug.Log("Current flower count: " + flowerCount);
+            }
+
+
+
+            if (flowerCount < spawnCount)
+            {
+                // If flower count is below target, start respawning
+                if (resetTimer == true)
+                {
+                    timer = 0;
+                    resetTimer = false;
+                }
+                timer++;
+                if (timer > 60 && flowerCount >= 5) // Adjust this value to control respawn frequency
+                {
+                    SpawningFlowers();
+                    resetTimer = true; // Reset timer after spawning
+                }
+            }
+            else
+            {
+                // Reset timer if we have enough flowers
+                resetTimer = true;
+            }
+
+
         }
 
         // Spawns new flowers until reaching spawnCount

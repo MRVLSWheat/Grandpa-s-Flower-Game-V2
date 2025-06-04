@@ -15922,6 +15922,7 @@ MonoBehaviour:
     maxDisturbance: 30
     line: 'No more games Otis, stop annoying the animals ! '
   speakCooldown: 10
+  speakRange: 3
 --- !u!114 &746219035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16033,6 +16034,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5210197519970088481, guid: 9fe5f98b8e3f1b948ba626ae698076d8, type: 3}
   m_PrefabInstance: {fileID: 8685080934559693077}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &746219041
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746219032}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &747283952
 GameObject:
   m_ObjectHideFlags: 0
@@ -43388,6 +43410,7 @@ MonoBehaviour:
     maxDisturbance: 30
     line: Stop annoying the animals Otis ! You're beeing annoying !
   speakCooldown: 10
+  speakRange: 3
 --- !u!114 &1685612825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54699,6 +54722,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4829415325575441563, guid: 9fe5f98b8e3f1b948ba626ae698076d8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 746219034}
+    - targetCorrespondingSourceObject: {fileID: 4829415325575441563, guid: 9fe5f98b8e3f1b948ba626ae698076d8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 746219041}
   m_SourcePrefab: {fileID: 100100000, guid: 9fe5f98b8e3f1b948ba626ae698076d8, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -163,3 +164,4 @@ public class AutomaticLighting : MonoBehaviour
         }
     }
 }
+#endif

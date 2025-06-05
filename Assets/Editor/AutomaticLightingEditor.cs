@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(AutomaticLighting))]
 public class AutomaticLightingEditor : Editor
 {
@@ -27,3 +28,4 @@ public class AutomaticLightingEditor : Editor
         }
     }
 }
+#endif

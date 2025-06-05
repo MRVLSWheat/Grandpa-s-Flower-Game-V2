@@ -1,9 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AI;
-using System.Linq;
-using System.Collections;
-using UnityEngine.Serialization;
 
 namespace FlowerSpawner
 {
@@ -38,15 +35,6 @@ namespace FlowerSpawner
                 Debug.Log("Flower count: " + flowers.Count + ". Spawning more flowers.");
             }
 
-            if (flowers.Count < 8)
-            {
-                Debug.Log("Flower count is low: " + flowers.Count + ". Spawning more flowers.");
-                StartCoroutine(Hidetheplane.ActivatePlantAlert());
-            }
-             
-
-
-
             if (flowers.Count < spawnCount)
             {
                 timer++;
@@ -76,7 +64,7 @@ namespace FlowerSpawner
             {
                 // Create new flower at random position
                 GameObject newFlower = Instantiate(Flower, GetRandomPosition(), Quaternion.identity);
-                flowers.Add(newFlower); 
+                flowers.Add(newFlower);
             }
         }
 
@@ -105,6 +93,11 @@ namespace FlowerSpawner
             {
                 flowers.Remove(flower);
                 Debug.Log("Flower removed. Remaining count: " + flowers.Count);
+                if (flowers.Count < 8)
+                {
+                    Debug.Log("Flower count is low: " + flowers.Count + ". Spawning more flowers.");
+                    StartCoroutine(Hidetheplane.ActivatePlantAlert());
+                }
             }
             else
             {

@@ -13,7 +13,7 @@ namespace FlowerSpawner
         [SerializeField] private float minimalYrange = 10f;
         [SerializeField] private float maximalYrange = 10f;
         [SerializeField] private float heightSpawn = 0f;
-        private int timer = 0;
+        private float timer = 0;
         private bool resetTimer = false;
         [SerializeField] private Hidetheplane Hidetheplane;
         [SerializeField] private GameObject TallFlowers;
@@ -37,13 +37,13 @@ namespace FlowerSpawner
 
             if (flowers.Count < spawnCount)
             {
-                timer++;
-                if (resetTimer == true)
+                timer += Time.deltaTime;
+                if (resetTimer)
                 {
                     timer = 0;
                     resetTimer = false;
                 }
-                if (timer > 1800 && flowers.Count >= 5) // Adjust this value to control respawn frequency
+                if (timer > 60 && flowers.Count >= 5) // Adjust this value to control respawn frequency
                 {
                     SpawningFlowers();
                     resetTimer = true; // Reset timer after spawning

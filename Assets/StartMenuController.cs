@@ -5,7 +5,7 @@ public class StartMenuController : MonoBehaviour
 {
 public void onStartClick()
     {
-        SceneManager.LoadScene("Ruben trying more stuff and hope i dont kill the game");
+        SceneManager.LoadScene("Cutsene");
     }
 
 public void onExitClick()

@@ -59,9 +59,10 @@ public class FlowerHarvester : MonoBehaviour
                 if (inventory.AddFlower())
                 {
                     // Only destroy if successfully added to inventory
-                    flowerspawning.RemoveFlower(collider.gameObject);
+
                     Destroy(collider.gameObject);
-                    
+                    flowerspawning.RemoveFlower(collider.gameObject);
+
                 }
                 return; // Exit after first successful harvest
             }

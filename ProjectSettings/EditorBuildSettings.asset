@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Scenes/Dimi's Scene.unity
+    path: Assets/Scenes/Dimi's Scene/Dimi's Scene.unity
     guid: c7c787a75008a4144946762f584a9dfb
   - enabled: 1
     path: Assets/Scenes/Ruben trying more stuff and hope i dont kill the game.unity

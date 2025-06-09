@@ -18317,7 +18317,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   minimapUISize: {x: 350, y: 350}
-  minimapUIPosition: {x: 1550, y: 10}
+  minimapUIPosition: {x: 2200, y: 10}
   playerIconSprite: {fileID: 21300000, guid: b74c31d447d2f5d41a61081bdf5e7126, type: 3}
   toggleKey: 109
 --- !u!114 &882428089
@@ -18337,9 +18337,9 @@ MonoBehaviour:
   questGiverNpc: {fileID: 746219032}
   startMessage: Collect and hand over flowers
   completionMessage: Thank you! I have another task for you
-  progressTextAnchoredPosition: {x: 1350, y: -500}
-  startTextAnchoredPosition: {x: 1350, y: -550}
-  completionTextAnchoredPosition: {x: 1000, y: -500}
+  progressTextAnchoredPosition: {x: 2000, y: -500}
+  startTextAnchoredPosition: {x: 2000, y: -550}
+  completionTextAnchoredPosition: {x: 2000, y: -500}
   fontSize: 40
   fontColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &889460470

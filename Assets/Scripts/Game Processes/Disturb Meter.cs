@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DisturbanceManager : MonoBehaviour
@@ -69,6 +70,8 @@ public class DisturbanceManager : MonoBehaviour
         {
             RainToggle.RainToggled(disturbanceValue);
         }
+
+        if (disturbanceValue > 99) { SceneManager.LoadScene("BadEnding"); }
     }
 
     public void IncreaseDisturbance(float amount)

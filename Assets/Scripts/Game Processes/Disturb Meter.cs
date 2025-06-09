@@ -21,6 +21,7 @@ public class DisturbanceManager : MonoBehaviour
     [SerializeField] private Vector2 sliderPivot = new Vector2(0f, 0.5f);
     [SerializeField] private Vector2 sliderAnchoredPosition = new Vector2(300f, 0f); // Editable in Inspector
 
+    public float PlantAmount = 0f;
     void Awake()
     {
         if (Instance == null)
@@ -67,10 +68,6 @@ public class DisturbanceManager : MonoBehaviour
         if (RainToggle != null)
         {
             RainToggle.RainToggled(disturbanceValue);
-        }
-        if (Input.GetKeyDown("l"))
-        {
-            disturbanceValue += 10f;
         }
     }
 

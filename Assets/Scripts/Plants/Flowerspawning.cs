@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering.Universal;
 
 namespace FlowerSpawner
 {
@@ -16,6 +17,7 @@ namespace FlowerSpawner
         private float timer = 0;
         private bool resetTimer = false;
         [SerializeField] private Hidetheplane Hidetheplane;
+        [SerializeField] private DisturbanceManager DisturbanceManager;
         [SerializeField] private GameObject TallFlowers;
         [SerializeField] private GameObject ShortFlowers;
         [SerializeField] private List<GameObject> flowers = new List<GameObject>();
@@ -43,10 +45,10 @@ namespace FlowerSpawner
                     timer = 0;
                     resetTimer = false;
                 }
-                if (timer > 60 && flowers.Count >= 5) // Adjust this value to control respawn frequency
+                if (timer > 60 && flowers.Count >= 5) 
                 {
                     SpawningFlowers();
-                    resetTimer = true; // Reset timer after spawning
+                    resetTimer = true; 
                 }
             }
             else
@@ -57,12 +59,10 @@ namespace FlowerSpawner
 
         void SpawningFlowers()
         {
-            // Calculate how many flowers need to be spawned
             int flowersToSpawn = spawnCount - flowers.Count;
 
             for (int i = 0; i < flowersToSpawn; i++)
             {
-                // Create new flower at random position
                 GameObject newFlower = Instantiate(Flower, GetRandomPosition(), Quaternion.identity);
                 flowers.Add(newFlower);
             }
@@ -97,6 +97,12 @@ namespace FlowerSpawner
                 {
                     Debug.Log("Flower count is low: " + flowers.Count + ". Spawning more flowers.");
                     StartCoroutine(Hidetheplane.ActivatePlantAlert());
+                    if (flowerCount < 6)
+                    {
+                        Debug.Log("Disturbance increase");
+                        DisturbanceManager.Instance.IncreaseDisturbance(10f);
+
+                    }
                 }
             }
             else

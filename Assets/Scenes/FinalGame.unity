@@ -18342,6 +18342,50 @@ MonoBehaviour:
   completionTextAnchoredPosition: {x: 1000, y: -500}
   fontSize: 40
   fontColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &889460470
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 889460472}
+  - component: {fileID: 889460471}
+  m_Layer: 0
+  m_Name: MouseLock
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &889460471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889460470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca5c79c7334ff824c836298de1606257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &889460472
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889460470}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 616.7326, y: 21.173738, z: 511.66714}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &891733112
 GameObject:
   m_ObjectHideFlags: 0
@@ -21610,13 +21654,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1006299415}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.506375, y: -0.50637496, z: 0.4935427, w: 0.49354276}
-  m_LocalPosition: {x: 0.001, y: 0.042, z: 0.319}
+  m_LocalRotation: {x: -0.009076835, y: -0.70704854, z: 0.70704854, w: -0.009076835}
+  m_LocalPosition: {x: 0.0010079071, y: 0.041999817, z: 0.31902248}
   m_LocalScale: {x: 0.01082711, y: 0.01082711, z: 0.01082711}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1163917060}
-  m_LocalEulerAnglesHint: {x: 0, y: -91.471, z: 90}
+  m_LocalEulerAnglesHint: {x: 90, y: -91.471, z: 90}
 --- !u!114 &1006299417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21646,7 +21690,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -21674,7 +21718,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ecded015172501a459e94c05e86f1b14, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21714,8 +21758,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: a5ed8b9899bf6ff489f6a2ec8a539037, type: 3}
-  m_Resource: {fileID: 8300000, guid: a5ed8b9899bf6ff489f6a2ec8a539037, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ff194eef7c6d1134aac456f451cd5e5d, type: 3}
+  m_Resource: {fileID: 8300000, guid: ff194eef7c6d1134aac456f451cd5e5d, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -55052,3 +55096,4 @@ SceneRoots:
   - {fileID: 239960419}
   - {fileID: 395815894}
   - {fileID: 528451128}
+  - {fileID: 889460472}
